@@ -8,6 +8,7 @@
 namespace Agere\Simpler\Plugin;
 
 use Closure;
+use Zend\Db\Adapter\Driver\ResultInterface;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Mvc\Exception\InvalidArgumentException;
 use Zend\Stdlib\Exception;
@@ -335,7 +336,8 @@ class SimplerPlugin extends AbstractPlugin
     public function setContext($context, $identifier = 'id')
     {
         if ($context && $this->isIterable($context)) {
-            if (is_array($context) && is_array($context[0])) {
+            // ResultInterface - це lifehack для роботи з результатами Zend\Db\Table
+            if (is_array($context) && is_array($context[0]) || $context instanceof ResultInterface) {
                 $this->contextType = 'array';
             } elseif ($this->isIterable($context)) {
                 $this->contextType = 'object';
