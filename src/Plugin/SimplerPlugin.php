@@ -335,6 +335,7 @@ class SimplerPlugin extends AbstractPlugin
 
     public function setContext($context, $identifier = 'id')
     {
+        $this->reset();
         if ($context && $this->isIterable($context)) {
             // ResultInterface - це lifehack для роботи з результатами Zend\Db\Table
             if (is_array($context) && is_array($context[0]) || $context instanceof ResultInterface) {
