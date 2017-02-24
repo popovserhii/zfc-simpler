@@ -357,7 +357,8 @@ class SimplerPlugin extends AbstractPlugin
         return $this->context;
     }
 
-    protected function isIterable($var) {
+    protected function isIterable($var) 
+    {
         return (is_array($var) || $var instanceof \Traversable);
     }
 
