@@ -2,12 +2,12 @@
 /**
  * Simpler module
  *
- * @category Agere
- * @package Agere_Simpler
- * @author Popov Sergiy <popov@agere.com.ua>
+ * @category Popov
+ * @package Popov_Simpler
+ * @author Serhii Popov <popow.serhii@gmail.com>
  * @datetime: 25.07.14 15:04
  */
-namespace Agere\Simpler;
+namespace Popov\Simpler;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
