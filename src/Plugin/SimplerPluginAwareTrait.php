@@ -1,6 +1,6 @@
 <?php
 
-namespace Agere\Simpler\Plugin;
+namespace Popov\Simpler\Plugin;
 
 trait SimplerPluginAwareTrait
 {

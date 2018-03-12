@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Agere\\Simpler\\": "src/"
+      "Popov\\Simpler\\": "src/"
     }
   }
 }

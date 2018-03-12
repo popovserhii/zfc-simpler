@@ -1,19 +1,25 @@
 <?php
 /**
+ * The MIT License (MIT)
+ * Copyright (c) 2018 Serhii Popov
+ * This source file is subject to The MIT License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/MIT
+ *
  * @category Popov
  * @package Popov_Simpler
  * @author Serhii Popov <popow.serhii@gmail.com>
- * @datetime: 17.05.15 18:12
+ * @license https://opensource.org/licenses/MIT The MIT License (MIT)
  */
-namespace Popov\Simpler\Plugin;
+
+namespace Popov\Simpler;
 
 use Closure;
 use Zend\Db\Adapter\Driver\ResultInterface;
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
-use Zend\Mvc\Exception\InvalidArgumentException;
-use Zend\Stdlib\Exception;
+use Zend\Stdlib\Exception\InvalidArgumentException;
 
-class SimplerPlugin extends AbstractPlugin
+class SimplerHelper
 {
     const DEFAULT_FIELD = 'id';
 
@@ -357,7 +363,7 @@ class SimplerPlugin extends AbstractPlugin
         return $this->context;
     }
 
-    protected function isIterable($var) 
+    public function isIterable($var)
     {
         return (is_array($var) || $var instanceof \Traversable);
     }

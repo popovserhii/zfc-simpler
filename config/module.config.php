@@ -1,5 +1,5 @@
 <?php
-namespace Agere\Simpler;
+namespace Popov\Simpler;
 
 return [
 	'controller_plugins' => [

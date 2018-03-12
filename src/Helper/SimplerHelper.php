@@ -1,12 +1,12 @@
 <?php
-namespace Agere\Simpler\Helper;
+namespace Popov\Simpler\Helper;
 
 use Zend\View\Helper\AbstractHelper;
-use Agere\Simpler\Plugin\SimplerPlugin as SimplerPlugin;
+use Popov\Simpler\Plugin\SimplerPlugin as SimplerPlugin;
 
 /**
  * Using Simpler plugin
- * All references point out Agere\Simpler\Plugin\Simpler
+ * All references point out Popov\Simpler\Plugin\Simpler
  *
  * @author Sergiy Popov
  */
