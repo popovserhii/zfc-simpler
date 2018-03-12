@@ -21,7 +21,6 @@ class ConfigProvider
     {
         $config = require __DIR__ . '/../config/module.config.php';
         unset($config['controller_plugins']);
-        unset($config['view_helpers']);
 
         return $config;
     }
