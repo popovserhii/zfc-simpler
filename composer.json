@@ -9,9 +9,8 @@
   ],
   "authors": [
     {
-      "name": "Sergiy Popov",
-      "email": "popow.sergiy@gmail.com",
-      "homepage": "http://agere.com.ua/",
+      "name": "Serhii Popov",
+      "email": "popow.serhii@gmail.com",
       "role": "Developer"
     }
   ],
@@ -22,6 +21,11 @@
   "autoload": {
     "psr-4": {
       "Popov\\Simpler\\": "src/"
+    }
+  },
+  "extra": {
+    "zf": {
+      "config-provider": "Popov\\Simpler\\ConfigProvider"
     }
   }
 }

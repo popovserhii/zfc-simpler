@@ -2,49 +2,49 @@
 namespace Popov\Simpler\Helper;
 
 use Zend\View\Helper\AbstractHelper;
-use Popov\Simpler\Plugin\SimplerPlugin as SimplerPlugin;
+use Popov\Simpler\SimplerHelper as Simpler;
 
 /**
  * Using Simpler plugin
- * All references point out Popov\Simpler\Plugin\Simpler
+ * All references point out to Popov\Simpler\Plugin\Simpler
  *
  * @author Sergiy Popov
  */
 class SimplerHelper extends AbstractHelper
 {
     /**
-     * @var SimplerPlugin
+     * @var SimplerHelper
      */
-    protected $simplerPlugin;
+    protected $simpler;
 
     /**
-     * @param SimplerPlugin $numberPlugin
+     * @param SimplerHelper $numberPlugin
      * @return $this
      */
-    public function setSimplerPlugin(SimplerPlugin $numberPlugin)
+    public function setSimpler(SimplerHelper $numberPlugin)
     {
-        $this->simplerPlugin = $numberPlugin;
+        $this->simpler = $numberPlugin;
 
         return $this;
     }
 
     /**
-     * @return SimplerPlugin
+     * @return SimplerHelper
      */
-    public function getSimplerPlugin()
+    public function getSimpler()
     {
-        if (null === $this->simplerPlugin) {
+        if (null === $this->simpler) {
             $sm = $this->getView()->getHelperPluginManager()->getServiceLocator();
-            $this->simplerPlugin = $sm->get('ControllerPluginManager')->get('simpler');
+            $this->simpler = $sm->get(SimplerHelper::class);
         }
 
-        return $this->simplerPlugin;
+        return $this->simpler;
     }
 
     public function __invoke()
     {
         $params = func_get_args();
 
-        return call_user_func_array($this->getSimplerPlugin(), $params);
+        return call_user_func_array($this->getSimpler(), $params);
     }
 }
