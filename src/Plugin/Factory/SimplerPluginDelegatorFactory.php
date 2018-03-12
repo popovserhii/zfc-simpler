@@ -1,6 +1,6 @@
 <?php
 
-namespace Agere\Simpler\Plugin\Factory;
+namespace Popov\Simpler\Plugin\Factory;
 
 use Zend\ServiceManager\DelegatorFactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
