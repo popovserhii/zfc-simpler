@@ -1,5 +1,5 @@
 <?php
-namespace Popov\Simpler\Helper;
+namespace Popov\Simpler\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 use Popov\Simpler\SimplerHelper as Simpler;
@@ -21,7 +21,7 @@ class SimplerHelper extends AbstractHelper
      * @param SimplerHelper $numberPlugin
      * @return $this
      */
-    public function setSimpler(SimplerHelper $numberPlugin)
+    public function __construct(Simpler $numberPlugin)
     {
         $this->simpler = $numberPlugin;
 
