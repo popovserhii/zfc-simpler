@@ -25,6 +25,7 @@
   },
   "extra": {
     "zf": {
+	  "component": "Popov\\Simpler",
       "config-provider": "Popov\\Simpler\\ConfigProvider"
     }
   }
