@@ -18,14 +18,11 @@ class SimplerHelper extends AbstractHelper
     protected $simpler;
 
     /**
-     * @param SimplerHelper $numberPlugin
-     * @return $this
+     * @param Simpler $simpler
      */
-    public function __construct(Simpler $numberPlugin)
+    public function __construct(Simpler $simpler)
     {
-        $this->simpler = $numberPlugin;
-
-        return $this;
+        $this->simpler = $simpler;
     }
 
     /**
