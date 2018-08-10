@@ -172,7 +172,8 @@ class SimplerHelper
      * @param bool $addKeyInt
      * @return array
      */
-    public function asAssociate($field, $addKeyInt = false) {
+    public function asAssociate($field, $addKeyInt = false)
+    {
         $result = [];
         $method = 'get' . ucfirst($field);
         foreach ($this->context as $item) {
@@ -181,6 +182,7 @@ class SimplerHelper
             } else {
                 $key = $item->$method();
             }
+
             if ($addKeyInt) {
                 $result[$key][] = $item;
             } else {
@@ -225,13 +227,13 @@ class SimplerHelper
      * @return array
      * @deprecated
      */
-    public function getValuesArray($field, array $items, $template = '')
+    public function getValuesArray($field, array $items, string $template = null)
     {
         $itemsArray = [];
 
         foreach ($items as $item)
         {
-            $val = ($template != '') ? sprintf($template, $item[$field]) : $item[$field];
+            $val = $template ? sprintf($template, $item[$field]) : $item[$field];
             $itemsArray[] = $val;
         }
 
@@ -245,7 +247,7 @@ class SimplerHelper
      * @param string $keyField
      * @return array
      */
-    public function asArrayValue($valField, $keyField = '')
+    public function asArrayValue($valField, string $keyField = null)
     {
         $result = [];
         $method = 'get' . ucfirst($valField);
@@ -344,7 +346,7 @@ class SimplerHelper
         $this->reset();
         if ($context && $this->isIterable($context)) {
             // ResultInterface - це lifehack для роботи з результатами Zend\Db\Table
-            if (is_array($context) && is_array($context[0]) || $context instanceof ResultInterface) {
+            if (is_array($context) && is_array(next($context)) || $context instanceof ResultInterface) {
                 $this->contextType = 'array';
             } elseif ($this->isIterable($context)) {
                 $this->contextType = 'object';
