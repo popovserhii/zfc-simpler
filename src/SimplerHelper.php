@@ -178,9 +178,9 @@ class SimplerHelper
         $method = 'get' . ucfirst($field);
         foreach ($this->context as $item) {
             if (!is_object($item)) {
-                $key = (isset($item[$field])) ? $item[$field] : $item[0]->$method();
+                $key = (isset($item[$field])) ? $item[$field] : $item[0]->{$method}();
             } else {
-                $key = $item->$method();
+                $key = $item->{$method}();
             }
 
             if ($addKeyInt) {
